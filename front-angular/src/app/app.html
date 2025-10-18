@@ -1,0 +1,30 @@
+<div class="app-container">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1 class="app-title">{{ 'app.title' | translate }}</h1>
+      <nav class="main-nav">
+        <a routerLink="/dashboard" routerLinkActive="active">{{ 'navigation.dashboard' | translate }}</a>
+        <a routerLink="/eleves" routerLinkActive="active">{{ 'navigation.students' | translate }}</a>
+        <a routerLink="/classes" routerLinkActive="active">{{ 'navigation.classes' | translate }}</a>
+        <a routerLink="/notes" routerLinkActive="active">{{ 'navigation.grades' | translate }}</a>
+      </nav>
+      <div class="header-controls">
+        <app-language-selector></app-language-selector>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Translation Status -->
+  <app-translation-status></app-translation-status>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Système de Gestion Madrassa - Développé avec Angular et Spring Boot</p>
+  </footer>
+</div>

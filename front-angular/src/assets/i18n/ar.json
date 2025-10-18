@@ -1,0 +1,144 @@
+{
+  "app": {
+    "title": "نظام إدارة المدرسة"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "schoolYear": "السنة الدراسية",
+    "stats": {
+      "students": "الطلاب",
+      "classes": "الفصول",
+      "grades": "الدرجات",
+      "reports": "التقارير"
+    },
+    "quickActions": {
+      "title": "الإجراءات السريعة",
+      "addStudent": "إضافة طالب",
+      "createClass": "إنشاء فصل",
+      "enterGrades": "إدخال درجات",
+      "generateReport": "إنشاء تقرير"
+    },
+    "loading": "جاري تحميل البيانات...",
+    "viewAllStudents": "عرض جميع الطلاب",
+    "manageClasses": "إدارة الفصول",
+    "manageGrades": "إدارة الدرجات",
+    "generateReports": "إنشاء التقارير",
+    "reportsDescription": "الشهادات والإحصائيات",
+    "notDefined": "غير محدد",
+    "connectionError": "خطأ في الاتصال"
+  },
+  "students": {
+    "title": "إدارة الطلاب",
+    "search": "البحث عن طالب...",
+    "searchButton": "بحث",
+    "clear": "مسح",
+    "addNew": "إضافة طالب جديد",
+    "addFirstStudent": "إضافة أول طالب",
+    "searchPlaceholder": "البحث عن طالب (الاسم، اللقب، الرقم)...",
+    "noResults": "لم يتم العثور على طلاب",
+    "loading": "جاري التحميل...",
+    "firstName": "الاسم الأول",
+    "lastName": "اللقب",
+    "birthDate": "تاريخ الإزدياد",
+    "age": "العمر",
+    "actions": "الإجراءات",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "confirmDelete": "هل أنت متأكد من حذف الطالب",
+    "deleteError": "خطأ أثناء حذف الطالب",
+    "loadError": "خطأ أثناء تحميل الطلاب",
+    "searchError": "خطأ أثناء البحث",
+    "years": "سنة"
+  },
+  "classes": {
+    "title": "إدارة الفصول",
+    "comingSoon": "قيد التطوير",
+    "description": "ستكون إدارة الفصول متاحة قريباً.",
+    "features": {
+      "createModify": "إنشاء وتعديل الفصول",
+      "assignStudents": "تعيين الطلاب للفصول",
+      "manageTeachers": "إدارة المعلمين الرئيسيين",
+      "scheduleCourses": "جدولة الدروس"
+    }
+  },
+  "grades": {
+    "title": "إدارة الدرجات",
+    "comingSoon": "قيد التطوير",
+    "description": "ستكون إدارة الدرجات متاحة قريباً.",
+    "features": {
+      "enterGrades": "إدخال درجات الطلاب",
+      "createEvaluations": "إنشاء التقييمات",
+      "calculateAverages": "حساب المتوسطات",
+      "generateReports": "إنشاء الشهادات"
+    }
+  },
+  "navigation": {
+    "dashboard": "لوحة التحكم",
+    "students": "الطلاب",
+    "classes": "الفصول",
+    "grades": "الدرجات"
+  },
+  "common": {
+    "page": "صفحة",
+    "of": "من",
+    "previous": "السابق",
+    "next": "التالي",
+    "first": "الأول",
+    "last": "الأخير",
+    "total": "المجموع",
+    "elements": "عناصر",
+    "yes": "نعم",
+    "no": "لا",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "close": "إغلاق"
+  },
+  "demo": {
+    "title": "عرض توضيحي للترجمة",
+    "examples": {
+      "title": "أمثلة الاستخدام",
+      "simple": {
+        "title": "ترجمة بسيطة",
+        "description": "هذا مثال على ترجمة أساسية بدون معاملات."
+      },
+      "params": {
+        "title": "ترجمة مع معاملات",
+        "message": "مرحباً {{name}}، لديك {{count}} رسالة جديدة."
+      },
+      "rtl": {
+        "title": "دعم الكتابة من اليمين إلى اليسار",
+        "box1": "صندوق 1",
+        "box2": "صندوق 2",
+        "box3": "صندوق 3"
+      }
+    },
+    "currentLang": {
+      "title": "اللغة الحالية",
+      "code": "الرمز",
+      "name": "الاسم",
+      "direction": "الاتجاه",
+      "flag": "العلم",
+      "rtl": "من اليمين إلى اليسار",
+      "ltr": "من اليسار إلى اليمين"
+    },
+    "practical": {
+      "title": "أمثلة عملية",
+      "forms": {
+        "title": "النماذج",
+        "name": "الاسم الكامل",
+        "namePlaceholder": "أدخل اسمك...",
+        "email": "عنوان البريد الإلكتروني",
+        "emailPlaceholder": "أدخل بريدك الإلكتروني..."
+      },
+      "messages": {
+        "title": "رسائل النظام",
+        "success": "تمت العملية بنجاح!",
+        "warning": "تحذير: تحقق من بياناتك.",
+        "error": "حدث خطأ ما."
+      },
+      "navigation": {
+        "title": "التنقل"
+      }
+    }
+  }
+}

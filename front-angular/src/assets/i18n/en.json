@@ -1,0 +1,144 @@
+{
+  "app": {
+    "title": "Madrassa Management System"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "schoolYear": "School Year",
+    "stats": {
+      "students": "Students",
+      "classes": "Classes",
+      "grades": "Grades",
+      "reports": "Reports"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "addStudent": "Add Student",
+      "createClass": "Create Class",
+      "enterGrades": "Enter Grades",
+      "generateReport": "Generate Report"
+    },
+    "loading": "Loading data...",
+    "viewAllStudents": "View all students",
+    "manageClasses": "Manage classes",
+    "manageGrades": "Manage grades",
+    "generateReports": "Generate reports",
+    "reportsDescription": "Report cards and statistics",
+    "notDefined": "Not defined",
+    "connectionError": "Connection error"
+  },
+  "students": {
+    "title": "Student Management",
+    "search": "Search for a student...",
+    "searchButton": "Search",
+    "clear": "Clear",
+    "addNew": "Add new student",
+    "addFirstStudent": "Add first student",
+    "searchPlaceholder": "Search for a student (name, surname, number)...",
+    "noResults": "No students found",
+    "loading": "Loading...",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "birthDate": "Birth Date",
+    "age": "Age",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete student",
+    "deleteError": "Error deleting student",
+    "loadError": "Error loading students",
+    "searchError": "Error during search",
+    "years": "years"
+  },
+  "classes": {
+    "title": "Class Management",
+    "comingSoon": "Feature under development",
+    "description": "Class management will be available soon.",
+    "features": {
+      "createModify": "Create and modify classes",
+      "assignStudents": "Assign students to classes",
+      "manageTeachers": "Manage main teachers",
+      "scheduleCourses": "Schedule courses"
+    }
+  },
+  "grades": {
+    "title": "Grade Management",
+    "comingSoon": "Feature under development",
+    "description": "Grade management will be available soon.",
+    "features": {
+      "enterGrades": "Enter student grades",
+      "createEvaluations": "Create evaluations",
+      "calculateAverages": "Calculate averages",
+      "generateReports": "Generate report cards"
+    }
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "students": "Students",
+    "classes": "Classes",
+    "grades": "Grades"
+  },
+  "common": {
+    "page": "Page",
+    "of": "of",
+    "previous": "Previous",
+    "next": "Next",
+    "first": "First",
+    "last": "Last",
+    "total": "Total",
+    "elements": "elements",
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close"
+  },
+  "demo": {
+    "title": "Internationalization Demo",
+    "examples": {
+      "title": "Usage Examples",
+      "simple": {
+        "title": "Simple translation",
+        "description": "Here's an example of basic translation without parameters."
+      },
+      "params": {
+        "title": "Translation with parameters",
+        "message": "Hello {{name}}, you have {{count}} new messages."
+      },
+      "rtl": {
+        "title": "RTL Support (Right-to-Left)",
+        "box1": "Box 1",
+        "box2": "Box 2",
+        "box3": "Box 3"
+      }
+    },
+    "currentLang": {
+      "title": "Current Language",
+      "code": "Code",
+      "name": "Name",
+      "direction": "Direction",
+      "flag": "Flag",
+      "rtl": "Right to Left",
+      "ltr": "Left to Right"
+    },
+    "practical": {
+      "title": "Practical Examples",
+      "forms": {
+        "title": "Forms",
+        "name": "Full Name",
+        "namePlaceholder": "Enter your name...",
+        "email": "Email Address",
+        "emailPlaceholder": "Enter your email..."
+      },
+      "messages": {
+        "title": "System Messages",
+        "success": "Operation completed successfully!",
+        "warning": "Warning: Please check your data.",
+        "error": "An error occurred."
+      },
+      "navigation": {
+        "title": "Navigation"
+      }
+    }
+  }
+}

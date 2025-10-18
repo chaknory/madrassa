@@ -1,0 +1,144 @@
+{
+  "app": {
+    "title": "Système de Gestion Madrassa"
+  },
+  "dashboard": {
+    "title": "Tableau de Bord",
+    "schoolYear": "Année Scolaire",
+    "stats": {
+      "students": "Élèves",
+      "classes": "Classes",
+      "grades": "Notes",
+      "reports": "Rapports"
+    },
+    "quickActions": {
+      "title": "Actions Rapides",
+      "addStudent": "Ajouter un élève",
+      "createClass": "Créer une classe",
+      "enterGrades": "Saisir des notes",
+      "generateReport": "Générer un bulletin"
+    },
+    "loading": "Chargement des données...",
+    "viewAllStudents": "Voir tous les élèves",
+    "manageClasses": "Gérer les classes",
+    "manageGrades": "Gérer les notes",
+    "generateReports": "Générer des rapports",
+    "reportsDescription": "Bulletins et statistiques",
+    "notDefined": "Non définie",
+    "connectionError": "Erreur de connexion"
+  },
+  "students": {
+    "title": "Gestion des Élèves",
+    "search": "Rechercher un élève...",
+    "searchButton": "Rechercher",
+    "clear": "Effacer",
+    "addNew": "Ajouter un nouvel élève",
+    "addFirstStudent": "Ajouter le premier élève",
+    "searchPlaceholder": "Rechercher un élève (nom, prénom, numéro)...",
+    "noResults": "Aucun élève trouvé",
+    "loading": "Chargement...",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "birthDate": "Date de naissance",
+    "age": "Âge",
+    "actions": "Actions",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer l'élève",
+    "deleteError": "Erreur lors de la suppression de l'élève",
+    "loadError": "Erreur lors du chargement des élèves",
+    "searchError": "Erreur lors de la recherche",
+    "years": "ans"
+  },
+  "classes": {
+    "title": "Gestion des Classes",
+    "comingSoon": "Fonctionnalité en développement",
+    "description": "La gestion des classes sera bientôt disponible.",
+    "features": {
+      "createModify": "Créer et modifier des classes",
+      "assignStudents": "Assigner des élèves aux classes",
+      "manageTeachers": "Gérer les enseignants principaux",
+      "scheduleCourses": "Planifier les cours"
+    }
+  },
+  "grades": {
+    "title": "Gestion des Notes",
+    "comingSoon": "Fonctionnalité en développement",
+    "description": "La gestion des notes sera bientôt disponible.",
+    "features": {
+      "enterGrades": "Saisir les notes des élèves",
+      "createEvaluations": "Créer des évaluations",
+      "calculateAverages": "Calculer les moyennes",
+      "generateReports": "Générer des bulletins"
+    }
+  },
+  "navigation": {
+    "dashboard": "Tableau de Bord",
+    "students": "Élèves",
+    "classes": "Classes",
+    "grades": "Notes"
+  },
+  "common": {
+    "page": "Page",
+    "of": "sur",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "first": "Premier",
+    "last": "Dernier",
+    "total": "Total",
+    "elements": "éléments",
+    "yes": "Oui",
+    "no": "Non",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "close": "Fermer"
+  },
+  "demo": {
+    "title": "Démonstration d'Internationalisation",
+    "examples": {
+      "title": "Exemples d'utilisation",
+      "simple": {
+        "title": "Traduction simple",
+        "description": "Voici un exemple de traduction basique sans paramètres."
+      },
+      "params": {
+        "title": "Traduction avec paramètres",
+        "message": "Bonjour {{name}}, vous avez {{count}} nouveaux messages."
+      },
+      "rtl": {
+        "title": "Support RTL (Droite vers Gauche)",
+        "box1": "Boîte 1",
+        "box2": "Boîte 2", 
+        "box3": "Boîte 3"
+      }
+    },
+    "currentLang": {
+      "title": "Langue actuelle",
+      "code": "Code",
+      "name": "Nom",
+      "direction": "Direction",
+      "flag": "Drapeau",
+      "rtl": "Droite vers Gauche",
+      "ltr": "Gauche vers Droite"
+    },
+    "practical": {
+      "title": "Exemples pratiques",
+      "forms": {
+        "title": "Formulaires",
+        "name": "Nom complet",
+        "namePlaceholder": "Entrez votre nom...",
+        "email": "Adresse email",
+        "emailPlaceholder": "Entrez votre email..."
+      },
+      "messages": {
+        "title": "Messages système",
+        "success": "Opération réussie avec succès !",
+        "warning": "Attention : Vérifiez vos données.",
+        "error": "Une erreur s'est produite."
+      },
+      "navigation": {
+        "title": "Navigation"
+      }
+    }
+  }
+}

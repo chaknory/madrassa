@@ -1,0 +1,9 @@
+dz\tarbiya\madrassa\adapter\in\rest\NoteControllerTest.class
+dz\tarbiya\madrassa\application\service\ClasseServiceTest.class
+dz\tarbiya\madrassa\adapter\out\jpa\note\NoteRepositoryAdapterTest.class
+dz\tarbiya\madrassa\MadrassaApplicationTest.class
+dz\tarbiya\madrassa\application\service\NoteServiceTest.class
+dz\tarbiya\madrassa\integration\NoteIntegrationTest.class
+dz\tarbiya\madrassa\adapter\out\jpa\personnel\PersonnelRepositoryAdapterTest.class
+dz\tarbiya\madrassa\application\service\PersonneServiceTest.class
+dz\tarbiya\madrassa\application\service\EleveServiceTest.class

@@ -1,0 +1,238 @@
+/* Styles RTL/LTR globaux */
+
+/* Classes génériques pour les layouts RTL/LTR */
+.rtl-layout {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr-layout {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Margins et Paddings flexibles */
+.margin-start {
+  margin-inline-start: 1rem;
+}
+
+.margin-end {
+  margin-inline-end: 1rem;
+}
+
+.padding-start {
+  padding-inline-start: 1rem;
+}
+
+.padding-end {
+  padding-inline-end: 1rem;
+}
+
+/* Bordures flexibles */
+.border-start {
+  border-inline-start: 1px solid #ddd;
+}
+
+.border-end {
+  border-inline-end: 1px solid #ddd;
+}
+
+/* Positionnement flexible */
+.float-start {
+  float: inline-start;
+}
+
+.float-end {
+  float: inline-end;
+}
+
+/* Text alignment flexible */
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+/* Flex direction pour RTL */
+.flex-row-rtl {
+  display: flex;
+  flex-direction: row;
+}
+
+[dir="rtl"] .flex-row-rtl {
+  flex-direction: row-reverse;
+}
+
+/* Support pour les icônes dans différentes directions */
+.icon-before::before {
+  margin-inline-end: 0.5rem;
+}
+
+.icon-after::after {
+  margin-inline-start: 0.5rem;
+}
+
+/* Navigation et menus */
+.nav-horizontal {
+  display: flex;
+  gap: 1rem;
+}
+
+[dir="rtl"] .nav-horizontal {
+  flex-direction: row-reverse;
+}
+
+/* Forms et inputs */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: start;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  text-align: start;
+}
+
+/* Tables responsive pour RTL */
+.table-responsive {
+  overflow-x: auto;
+}
+
+[dir="rtl"] .table-responsive {
+  overflow-x: auto;
+}
+
+/* Animations qui respectent la direction */
+@keyframes slideInStart {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInEnd {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[dir="rtl"] .slide-in-start {
+  animation: slideInEnd 0.3s ease-out;
+}
+
+.slide-in-start {
+  animation: slideInStart 0.3s ease-out;
+}
+
+/* Dropdown menus */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 0;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+[dir="rtl"] .dropdown-menu {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}
+
+/* Cards et conteneurs */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+[dir="rtl"] .card-header {
+  flex-direction: row-reverse;
+}
+
+/* Utilities pour espacement */
+.me-1 { margin-inline-end: 0.25rem; }
+.me-2 { margin-inline-end: 0.5rem; }
+.me-3 { margin-inline-end: 1rem; }
+.me-4 { margin-inline-end: 1.5rem; }
+
+.ms-1 { margin-inline-start: 0.25rem; }
+.ms-2 { margin-inline-start: 0.5rem; }
+.ms-3 { margin-inline-start: 1rem; }
+.ms-4 { margin-inline-start: 1.5rem; }
+
+.pe-1 { padding-inline-end: 0.25rem; }
+.pe-2 { padding-inline-end: 0.5rem; }
+.pe-3 { padding-inline-end: 1rem; }
+.pe-4 { padding-inline-end: 1.5rem; }
+
+.ps-1 { padding-inline-start: 0.25rem; }
+.ps-2 { padding-inline-start: 0.5rem; }
+.ps-3 { padding-inline-start: 1rem; }
+.ps-4 { padding-inline-start: 1.5rem; }
+
+/* Media queries pour responsive RTL */
+@media (max-width: 768px) {
+  .responsive-stack {
+    flex-direction: column;
+  }
+  
+  .responsive-stack > * {
+    margin-bottom: 1rem;
+  }
+  
+  .responsive-stack > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Support pour les polices arabes */
+[dir="rtl"] {
+  font-family: 'Amiri', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* Amélioration de la lisibilité pour l'arabe */
+[dir="rtl"] p,
+[dir="rtl"] li,
+[dir="rtl"] div {
+  line-height: 1.8;
+}
+
+/* Boutons avec icônes */
+.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[dir="rtl"] .btn-with-icon {
+  flex-direction: row-reverse;
+}

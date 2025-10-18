@@ -1,0 +1,105 @@
+<div class="eleve-list-container">
+  <div class="header-section">
+    <h2>Gestion des Élèves</h2>
+    
+    <!-- Barre de recherche -->
+    <div class="search-section">
+      <div class="search-bar">
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery" 
+          [placeholder]="'students.searchPlaceholder' | translate"
+          class="search-input"
+          (keyup.enter)="onSearch()"
+        />
+        <button class="search-btn" (click)="onSearch()">🔍</button>
+        <button class="clear-btn" (click)="clearSearch()" *ngIf="searchQuery">✖️</button>
+      </div>
+      <button class="add-btn">➕ {{ 'students.addNew' | translate }}</button>
+    </div>
+  </div>
+
+  <!-- Résultats -->
+  <div class="results-info" *ngIf="!isLoading">
+    <p>{{ totalElements }} élève(s) trouvé(s)</p>
+  </div>
+
+  <!-- Loading -->
+  <div class="loading-container" *ngIf="isLoading">
+    <div class="loading-spinner"></div>
+    <p>Chargement des élèves...</p>
+  </div>
+
+  <!-- Liste des élèves -->
+  <div class="eleves-grid" *ngIf="!isLoading && eleves.length > 0">
+    <div class="eleve-card" *ngFor="let eleve of eleves">
+      <div class="eleve-header">
+        <div class="eleve-photo">
+          <span class="photo-placeholder">{{ eleve.prenom[0] }}{{ eleve.nom[0] }}</span>
+        </div>
+        <div class="eleve-info">
+          <h3 class="eleve-name">{{ eleve.prenom }} {{ eleve.nom }}</h3>
+          <p class="eleve-numero">N° {{ eleve.numeroEleve }}</p>
+          <p class="eleve-age">{{ eleve.ageCalcule }} ans</p>
+        </div>
+      </div>
+      
+      <div class="eleve-details">
+        <div class="detail-item">
+          <span class="label">Date de naissance:</span>
+          <span class="value">{{ eleve.dateFormatee }}</span>
+        </div>
+        <div class="detail-item" *ngIf="eleve.email">
+          <span class="label">Email:</span>
+          <span class="value">{{ eleve.email }}</span>
+        </div>
+        <div class="detail-item" *ngIf="eleve.telephoneMobile">
+          <span class="label">Téléphone:</span>
+          <span class="value">{{ eleve.telephoneMobile }}</span>
+        </div>
+        <div class="detail-item" *ngIf="eleve.ville">
+          <span class="label">Ville:</span>
+          <span class="value">{{ eleve.ville }}</span>
+        </div>
+      </div>
+
+      <div class="eleve-actions">
+        <button class="action-btn view-btn">👁️ Voir</button>
+        <button class="action-btn edit-btn">✏️ Modifier</button>
+        <button class="action-btn delete-btn" (click)="deleteEleve(eleve)">🗑️ Supprimer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message si aucun élève -->
+  <div class="no-results" *ngIf="!isLoading && eleves.length === 0">
+    <div class="no-results-icon">👥</div>
+    <h3>Aucun élève trouvé</h3>
+    <p *ngIf="searchQuery">Aucun élève ne correspond à votre recherche "{{ searchQuery }}"</p>
+    <p *ngIf="!searchQuery">Aucun élève n'a été enregistré pour le moment.</p>
+    <button class="add-btn">➕ {{ 'students.addFirstStudent' | translate }}</button>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination" *ngIf="!isLoading && totalPages > 1">
+    <button 
+      class="pagination-btn" 
+      (click)="goToPage(currentPage - 1)" 
+      [disabled]="currentPage === 0"
+    >
+      ← Précédent
+    </button>
+    
+    <div class="pagination-info">
+      Page {{ currentPage + 1 }} sur {{ totalPages }}
+    </div>
+    
+    <button 
+      class="pagination-btn" 
+      (click)="goToPage(currentPage + 1)" 
+      [disabled]="currentPage === totalPages - 1"
+    >
+      Suivant →
+    </button>
+  </div>
+</div>

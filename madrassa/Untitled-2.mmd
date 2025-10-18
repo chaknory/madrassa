@@ -1,0 +1,278 @@
+---
+title: Modèle de Données de l'Application Madrassa
+---
+erDiagram
+    %% Entités de base
+    PERSONNE {
+        Long idPersonne PK
+        string nom
+        string prenom
+        LocalDate dateNaissance
+        string sexe
+        string email
+        string telephone
+        string telephoneMobile
+        string adresse
+        string codePostal
+        string ville
+        string pays
+        string photoUrl
+        string typePersonne
+        Boolean actif
+        LocalDateTime dateCreation
+        LocalDateTime dateModification
+    }
+
+    ELEVE {
+        Long id PK
+        string nom
+        string prenom
+        LocalDate dateNaissance
+        string numeroEleve
+    }
+
+    ENSEIGNANT {
+        Long idEnseignant PK
+        Long idPersonne FK
+        string numeroEmploye
+        LocalDate dateEmbauche
+        string specialite
+        string diplome
+        string statut
+        Double volumeHoraireHebdo
+        Boolean actif
+    }
+
+    PERSONNEL {
+        Long idPersonnel PK
+        Long idPersonne FK
+        string numeroEmploye
+        LocalDate dateEmbauche
+        string fonction
+        string service
+        string statut
+        Boolean actif
+    }
+
+    RESPONSABLE_LEGAL {
+        Long idResponsable PK
+        Long idPersonne FK
+        string typeResponsabilite
+        string profession
+        string employeur
+        Boolean actif
+    }
+
+    %% Structure académique
+    ANNEE_SCOLAIRE {
+        Long idAnnee PK
+        string libelle
+        LocalDate dateDebut
+        LocalDate dateFin
+        Boolean active
+    }
+
+    NIVEAU {
+        Long idNiveau PK
+        string code
+        string libelle
+        Integer ordre
+        string cycle
+    }
+
+    CLASSE {
+        Long idClasse PK
+        Long idAnnee FK
+        Long idNiveau FK
+        Long idEnseignantPrincipal FK
+        string nomClasse
+        Integer effectifMax
+        string salle
+        string commentaire
+    }
+
+    MATIERE {
+        Long idMatiere PK
+        string code
+        string libelle
+        string description
+        Double coefficient
+        string couleur
+        Boolean actif
+    }
+
+    COURS {
+        Long idCours PK
+        Long idClasse FK
+        Long idMatiere FK
+        Long idEnseignant FK
+        Long idAnnee FK
+        Double heuresSemaine
+        Double coefficient
+        string salle
+    }
+
+    %% Inscriptions et relations élèves
+    INSCRIPTION {
+        Long idInscription PK
+        Long idEleve FK
+        Long idClasse FK
+        LocalDate dateInscription
+        LocalDate dateFin
+        string statut
+        string commentaire
+    }
+
+    %% Évaluations et notes
+    PERIODE {
+        Long idPeriode PK
+        string libelle
+        LocalDate dateDebut
+        LocalDate dateFin
+        Integer ordre
+        Boolean active
+    }
+
+    TYPE_EVALUATION {
+        Long idTypeEvaluation PK
+        string code
+        string libelle
+        string description
+        Double coefficientDefaut
+        Boolean actif
+    }
+
+    EVALUATION {
+        Long idEvaluation PK
+        Long idCours FK
+        Long idPeriode FK
+        Long idTypeEval FK
+        string intitule
+        LocalDate dateEvaluation
+        Double noteSur
+        Double coefficient
+        Integer dureeMinutes
+        string commentaire
+        LocalDateTime dateCreation
+    }
+
+    NOTE {
+        Long idNote PK
+        Long idEvaluation FK
+        Long idEleve FK
+        Double valeur
+        Boolean absent
+        Boolean dispense
+        string appreciation
+        LocalDateTime dateSaisie
+        LocalDateTime dateModification
+    }
+
+    %% Bulletins
+    BULLETIN {
+        Long idBulletin PK
+        Long idEleve FK
+        Long idClasse FK
+        Long idPeriode FK
+        Double moyenneGenerale
+        Integer rang
+        Integer totalEleves
+        Integer nbAbsences
+        Integer nbRetards
+        string appreciationGenerale
+        string decisionConseil
+        LocalDate dateConseil
+        LocalDateTime dateGeneration
+        Boolean valide
+        LocalDateTime dateValidation
+    }
+
+    BULLETIN_DETAIL {
+        Long idBulletinDetail PK
+        Long idBulletin FK
+        Long idMatiere FK
+        Double moyenne
+        Double coefficient
+        Integer rang
+        string appreciation
+    }
+
+    %% Assiduité
+    ABSENCE {
+        Long idAbsence PK
+        Long idEleve FK
+        Long idCours FK
+        LocalDate dateAbsence
+        LocalTime heureDebut
+        LocalTime heureFin
+        Boolean justifie
+        string motif
+        string pieceJustificative
+        string commentaire
+        LocalDateTime dateSaisie
+    }
+
+    RETARD {
+        Long idRetard PK
+        Long idEleve FK
+        Long idCours FK
+        LocalDate dateRetard
+        LocalTime heureArrivee
+        Integer dureeMinutes
+        Boolean justifie
+        string motif
+        string commentaire
+        LocalDateTime dateSaisie
+    }
+
+    %% Horaires
+    HORAIRE_COURS {
+        Long idHoraire PK
+        Long idCours FK
+        string jourSemaine
+        LocalTime heureDebut
+        LocalTime heureFin
+        string salle
+        LocalDate dateDebut
+        LocalDate dateFin
+        Boolean actif
+    }
+
+    %% Relations principales
+    PERSONNE ||--o{ ENSEIGNANT : "est un"
+    PERSONNE ||--o{ PERSONNEL : "est un"
+    PERSONNE ||--o{ RESPONSABLE_LEGAL : "est un"
+
+    ANNEE_SCOLAIRE ||--o{ CLASSE : "contient"
+    NIVEAU ||--o{ CLASSE : "définit"
+    ENSEIGNANT ||--o{ CLASSE : "dirige"
+
+    CLASSE ||--o{ COURS : "a"
+    MATIERE ||--o{ COURS : "enseignée dans"
+    ENSEIGNANT ||--o{ COURS : "enseigne"
+    ANNEE_SCOLAIRE ||--o{ COURS : "se déroule pendant"
+
+    ELEVE ||--o{ INSCRIPTION : "s'inscrit"
+    CLASSE ||--o{ INSCRIPTION : "accueille"
+
+    COURS ||--o{ EVALUATION : "fait l'objet de"
+    PERIODE ||--o{ EVALUATION : "se déroule pendant"
+    TYPE_EVALUATION ||--o{ EVALUATION : "de type"
+
+    EVALUATION ||--o{ NOTE : "donne lieu à"
+    ELEVE ||--o{ NOTE : "obtient"
+
+    ELEVE ||--o{ BULLETIN : "reçoit"
+    CLASSE ||--o{ BULLETIN : "génère pour"
+    PERIODE ||--o{ BULLETIN : "évalue pendant"
+
+    BULLETIN ||--o{ BULLETIN_DETAIL : "détaille par"
+    MATIERE ||--o{ BULLETIN_DETAIL : "concerne"
+
+    ELEVE ||--o{ ABSENCE : "a des"
+    COURS ||--o{ ABSENCE : "pendant"
+
+    ELEVE ||--o{ RETARD : "a des"
+    COURS ||--o{ RETARD : "pendant"
+
+    COURS ||--o{ HORAIRE_COURS : "planifié selon"
