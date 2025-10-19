@@ -1,0 +1,34 @@
+# Compiled class files
+*.class
+
+# Maven / Gradle folders
+.mvn/
+.gradle/
+build/
+target/
+
+# Editor folders
+.idea/
+.vscode/
+*.iml
+
+# Log files
+*.log
+
+# Temporary / Backup files
+*.swp
+*.swo
+*.bak
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Spring Boot devtools
+.spring-boot-devtools.properties
+
+# Logs
+logs/
+
+# Environment variables
+.env
